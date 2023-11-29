@@ -7,7 +7,7 @@ const VideoContainer = () => {
     const fetchVideos=async()=>{
         const data= await fetch(YOUTUBE_VIDEOS_API)
         const json = await data.json();
-        console.log(json?.items)
+      //  console.log(json?.items)
         setVideos(json?.items)
     }
     useEffect(()=>{
@@ -20,7 +20,7 @@ const VideoContainer = () => {
   return (
     <div className='flex flex-wrap'>
       
-      {videos.map((item)=>(<Link to={"watch?v="+item.id}><Video data={item} key={item.id}/></Link>))}
+      {videos.map((item)=>(<Link to={"watch?v="+item.id} key={item.id}><Video data={item} /></Link>))}
       
     </div>
   )
