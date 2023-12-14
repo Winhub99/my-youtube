@@ -6,6 +6,8 @@ import store from './utils/store';
 import MainContent from './components/MainContent'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Watchpage from './components/Watchpage';
+import UseRefPrac from './components/concepts/UseRefPrac';
+import InfinateScrollExample from './components/concepts/InfinateScrollExample';
 
 const AppRouter = createBrowserRouter([
   {
@@ -19,6 +21,13 @@ const AppRouter = createBrowserRouter([
       {
         path:"watch",
         element:<Watchpage/>
+      },
+      {
+        path:"demo",
+        element:<UseRefPrac/>
+      },{
+        path:"scroll",
+        element:<InfinateScrollExample/>
       }
     ]
   },

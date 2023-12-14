@@ -13,7 +13,7 @@ const [liveMessage, setLiveMessage] = useState("")
         const timer=setInterval(()=>{
             dispatch(addMessage({
             name:generate(),
-            message:"Simmy Simmy yeah! Simmi yeh simm simmi.",
+            message:"This is a sample live Chat text.",
             imageUrl:"https://tse1.mm.bing.net/th?id=OIP.8pQGc1uvCGFkeniunEv1rwHaHa&pid=Api&P=0&h=180"
             }))
            // console.log("API call here")
@@ -23,7 +23,7 @@ const [liveMessage, setLiveMessage] = useState("")
         return()=>{
             clearInterval(timer)
         }
-    },[])
+    },[dispatch])
   return (
     <>
     <div className='h-[640px] w-full  p-2 border border-black  bg-slate-200  rounded-lg overflow-y-scroll flex flex-col-reverse' >

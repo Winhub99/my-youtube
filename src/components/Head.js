@@ -14,17 +14,17 @@ const Head = () => {
   const toggleMenuHandler = () => {
     dispatch(toggleMenu())
   }
-  
-  const fetchSuggestions = async () => {
 
-    const data = await fetch(YOUTUBE_SEARCH_API + searchText)
-    const json = await data.json()
-    console.log(json[1])
-    dispatch(cacheResults({
-      [searchText]: json[1],
-    }))
-  }
   useEffect(() => {
+    const fetchSuggestions = async () => {
+
+      const data = await fetch(YOUTUBE_SEARCH_API + searchText)
+      const json = await data.json()
+      console.log(json[1])
+      dispatch(cacheResults({
+        [searchText]: json[1],
+      }))
+    }
     const timer = setTimeout(() => {
 
       if (searchCache[searchText]) {
@@ -38,7 +38,7 @@ const Head = () => {
     return () => {
       clearTimeout(timer)
     }
-  }, [searchText,searchCache]);
+  }, [searchText,searchCache,dispatch]);
 
   return (
     <div className='shadow-lg'>
@@ -49,10 +49,10 @@ const Head = () => {
            alt='sidebar-menu' 
            src='https://tse3.mm.bing.net/th?id=OIP.tQmL3J28pFPoRIHXj_RQhQHaHa&pid=Api&P=0&h=180'
             onClick={() => { toggleMenuHandler() }} />
-          <img 
+        <a href='/'> <img 
           className='h-8 ml-2 cursor-pointer'
            alt='youtube-logo'
-            src='https://tse2.mm.bing.net/th?id=OIP.aByvAl4Fl4Dk3N9fA3IudwHaFM&pid=Api&P=0&h=180' />
+            src='https://tse2.mm.bing.net/th?id=OIP.aByvAl4Fl4Dk3N9fA3IudwHaFM&pid=Api&P=0&h=180' /></a>
         </div>
         <div className=' col-span-10 px-10 flex' >
           <input
