@@ -3,6 +3,7 @@ import { toggleMenu } from '../utils/AppSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { YOUTUBE_SEARCH_API } from "../utils/Constants"
 import { cacheResults } from "../utils/SearchSlice"
+import {SearchIcon} from "lucide-react"
 const Head = () => {
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -63,10 +64,8 @@ const Head = () => {
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setShowSuggestions(false)} />
           <button
-            className=' border border-gray-400  bg-gray-100 rounded-r-full p-2 '>
-            <img
-              className='h-5' alt="search icon"
-              src='https://tse2.mm.bing.net/th?id=OIP.vyhkMafwzVBCCSsgGJfI4wHaHa&pid=Api&P=0&h=180' />
+            className=' border border-gray-400  bg-gray-100 rounded-r-full p-2 w-14'>
+              <SearchIcon className='ml-1'/>
           </button>
         </div>
         <div className='col-span-1 '>

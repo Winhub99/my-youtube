@@ -4,7 +4,7 @@ import Button from './Button'
 const ButtonList = () => {
     const buttonNames =["All","Mixes","Music","Gaming","Javascript","Thrillers","Live","Reaction videos","Film Criticism","Television Comedy","Podcasts","Superheroes","Saitama"]
   return (
-    <div className='flex overflow-x-auto '>
+    <div className='flex overflow-x-auto ml-2 '>
       {buttonNames.map((name,index)=>(<Button name={name} key={index}/>))}
     </div>
   )

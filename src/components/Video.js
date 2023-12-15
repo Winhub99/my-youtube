@@ -5,7 +5,7 @@ const Video = ({data}) => {
     const {title,channelTitle,thumbnails, publishedAt} =snippet
     const {viewCount} = statistics
   return (
-    <div className='p-2 m-2 w-72 shadow-lg'>
+    <div className='p-2 m-2 w-80 shadow-lg'>
       <img className='rounded-lg' src={thumbnails?.medium?.url}/>
       <h1 className='font-bold text-lg py-2'>{title}</h1>
       <ul>
