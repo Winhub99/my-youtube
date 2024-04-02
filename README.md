@@ -1,4 +1,4 @@
-Project deployed on:https://fantastic-tiramisu-20fc2f.netlify.app/
+Project deployed on:https://winnr-ivory.vercel.app/
 
 
 ===========================================================================
